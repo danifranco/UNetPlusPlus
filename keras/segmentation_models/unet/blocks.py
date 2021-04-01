@@ -1,9 +1,9 @@
-from keras.layers import Conv2DTranspose
-from keras.layers import UpSampling2D
-from keras.layers import Conv2D
-from keras.layers import BatchNormalization
-from keras.layers import Activation
-from keras.layers import Concatenate
+from tensorflow.keras.layers import Conv2DTranspose
+from tensorflow.keras.layers import UpSampling2D
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import BatchNormalization
+from tensorflow.keras.layers import Activation
+from tensorflow.keras.layers import Concatenate
 
 
 def handle_block_names(stage):

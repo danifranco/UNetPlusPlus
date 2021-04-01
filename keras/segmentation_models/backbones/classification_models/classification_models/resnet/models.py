@@ -37,7 +37,7 @@ def ResNet50(input_shape, input_tensor=None, weights=None, classes=1000, include
                          repetitions=(3, 4, 6, 3),
                          classes=classes,
                          include_top=include_top)
-    model.name = 'resnet50'
+    model._name = 'resnet50'
 
     if weights:
         load_model_weights(weights_collection, model, weights, classes, include_top)

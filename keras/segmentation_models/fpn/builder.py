@@ -1,9 +1,9 @@
 import numpy as np
-from keras.layers import Conv2D
-from keras.layers import Concatenate
-from keras.layers import Activation
-from keras.layers import SpatialDropout2D
-from keras.models import Model
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import Concatenate
+from tensorflow.keras.layers import Activation
+from tensorflow.keras.layers import SpatialDropout2D
+from tensorflow.keras.models import Model
 
 from .blocks import pyramid_block
 from ..common import ResizeImage

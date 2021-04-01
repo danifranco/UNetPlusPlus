@@ -8,10 +8,10 @@ And original paper of PSPNet:
     https://arxiv.org/pdf/1612.01105.pdf
 """
 
-from keras.layers import Conv2D
-from keras.layers import Activation
-from keras.layers import SpatialDropout2D
-from keras.models import Model
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import Activation
+from tensorflow.keras.layers import SpatialDropout2D
+from tensorflow.keras.models import Model
 
 from .blocks import PyramidPoolingModule, DUC
 from ..common import Conv2DBlock

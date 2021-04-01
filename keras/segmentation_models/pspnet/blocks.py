@@ -1,10 +1,10 @@
 import numpy as np
-from keras.layers import MaxPool2D
-from keras.layers import AveragePooling2D
-from keras.layers import Concatenate
-from keras.layers import Permute
-from keras.layers import Reshape
-from keras.backend import int_shape
+from tensorflow.keras.layers import MaxPool2D
+from tensorflow.keras.layers import AveragePooling2D
+from tensorflow.keras.layers import Concatenate
+from tensorflow.keras.layers import Permute
+from tensorflow.keras.layers import Reshape
+from tensorflow.keras.backend import int_shape
 
 from ..common import Conv2DBlock
 from ..common import ResizeImage

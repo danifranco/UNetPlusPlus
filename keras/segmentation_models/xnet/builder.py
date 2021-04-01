@@ -1,6 +1,6 @@
-from keras.layers import Conv2D
-from keras.layers import Activation
-from keras.models import Model
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import Activation
+from tensorflow.keras.models import Model
 
 from .blocks import Transpose2D_block
 from .blocks import Upsample2D_block
@@ -8,6 +8,8 @@ from ..utils import get_layer_number, to_tuple
 
 import copy
 
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 def build_xnet(backbone, classes, skip_connection_layers,
                decoder_filters=(256,128,64,32,16),
@@ -41,9 +43,11 @@ def build_xnet(backbone, classes, skip_connection_layers,
     downsampling_list = [backbone.layers[downsampling_idx[i]].output for i in range(len(downsampling_idx))]
     downterm = [None] * (n_upsample_blocks+1)
     for i in range(len(downsampling_idx)):
-        # print(downsampling_list[0])
-        # print(backbone.output)
-        # print("")
+        #print(downsampling_list[0])
+        #print(backbone.output)
+        #print("")
+#        r = tf.cond(tf.equal(downsampling_list[0],backbone.output), lambda:1, lambda:0)
+#        if tf.equal(downsampling_list[0],backbone.output):
         if downsampling_list[0] == backbone.output:
             # print("VGG16 should be!")
             downterm[n_upsample_blocks-i] = downsampling_list[i]
